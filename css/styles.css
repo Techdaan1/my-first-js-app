@@ -1,0 +1,11 @@
+:root {
+  --bg-color: #D4EFDF;
+  --dark-blue: #191970
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: 'georgia', serif;
+  color: var(--dark-blue);
+  font-size: 16px;
+}
