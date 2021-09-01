@@ -19,16 +19,18 @@ let pokemonRepository = (function() {
   {
     name:"Butterfree",
     height: 1.1,
-    type: ["bug', 'flying"]
+    type: ["bug", "flying"]
   }
 ];
 
-// returns pokemonlist
+// returns Pokémon list
 function getAll() {
     return pokemonList;
   }
 
+// Checks if the Pokémon is an object
 function add(pokemon) {
+  if (typeof pokemon === "object")
       pokemonList.push(pokemon);
     }
 
