@@ -23,12 +23,12 @@ let pokemonList = [
 ]
 
 //Loop of the different Pokémon, including hight conditional
-for (let i=0; i < pokemonList.length; i++){
-  if (pokemonList[i].height >1.5){
-    document.write(pokemonList[i].name + " (height: " + pokemonList[i].height + ") - wow, that is big! " + "<br/>" );
-  } else if (pokemonList[i].height <1){
-    document.write(pokemonList[i].name + " (height: " + pokemonList[i].height + ") - ahw, so tiny! " + "<br/>" );
+pokemonList.forEach(function(pokemon) {
+  if (pokemon.height >1.5){
+    document.write(pokemon.name + " (height: " + pokemon.height + ") - wow, that is big! " + "<br/>" );
+  } else if (pokemon.height <1){
+    document.write(pokemon.name + " (height: " + pokemon.height + ") - ahw, so tiny! " + "<br/>" );
   } else {
-    document.write(pokemonList[i].name + " (height: " + pokemonList[i].height + ") - average " + "<br/>" )
+    document.write(pokemon.name + " (height: " + pokemon.height + ") - average " + "<br/>" );
   }
-}
+});
