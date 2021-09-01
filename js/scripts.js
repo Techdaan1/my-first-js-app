@@ -1,5 +1,6 @@
-//List of different Pokémon and their specifications
-let pokemonList = [
+//List of different Pokémon and their specifications, wrapped in an IIFE
+let pokemonRepository = (function() {
+  let pokemonList = [
   {
     name: "Bulbasaur",
     height: 0.7,
@@ -20,10 +21,26 @@ let pokemonList = [
     height: 1.1,
     type: ["bug', 'flying"]
   }
-]
+];
 
-//Loop of the different Pokémon, including hight conditional
-pokemonList.forEach(function(pokemon) {
+// returns pokemonlist
+function getAll() {
+    return pokemonList;
+  }
+
+function add(pokemon) {
+      pokemonList.push(pokemon);
+    }
+
+return {
+  getAll: getAll,
+  add: add
+};
+})();
+
+//forEach Loop of the different Pokémon, including hight conditional
+
+pokemonRepository.getAll().forEach(function(pokemon) {
   if (pokemon.height >1.5){
     document.write(pokemon.name + " (height: " + pokemon.height + ") - wow, that is big! " + "<br/>" );
   } else if (pokemon.height <1){
