@@ -8,4 +8,14 @@ body {
   font-family: 'georgia', serif;
   color: var(--dark-blue);
   font-size: 16px;
+  text-decoration: none;
+}
+
+.button-class {
+  background-color: #e6fcfa;
+  color: #17401f;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
 }
