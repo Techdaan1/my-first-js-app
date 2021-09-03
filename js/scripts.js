@@ -42,11 +42,12 @@ function getAll() {
     return repository;
 }
 
+// buttons showing the Pokémon
 function addListItem(pokemon){
   let pokemonList = document.querySelector('.pokemon-list');
   let pokemonListItem = document.createElement('li');
   let button = document.createElement('button');
-  button.addEventListener('click', function() {
+  button.addEventListener('click', function(event) {
     showDetails(pokemon);
   });
   button.innerText = pokemon.name;
@@ -65,8 +66,7 @@ return {
 console.log(pokemonRepository.getAll());
 pokemonRepository.add({ name: "Pikachu", height: 0.3, types:["electric"] });
 
+//forEach Loop of the different Pokémon
 pokemonRepository.getAll().forEach(function (pokemon) {
   pokemonRepository.addListItem(pokemon);
 });
-
-//forEach Loop of the different Pokémon, including hight conditional
