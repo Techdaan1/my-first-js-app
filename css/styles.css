@@ -13,9 +13,13 @@ body {
 
 .button-class {
   background-color: #e6fcfa;
+  border: none;
   color: #17401f;
+  padding: 16px 32px;
   font-size: 14px;
+  margin: 4px 2px;
   text-align: center;
   text-decoration: none;
+  display: inline-block;
   cursor: pointer;
 }
