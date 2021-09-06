@@ -43,6 +43,10 @@ function getAll() {
 }
 
 // buttons showing the Pokémon
+function showDetails(pokemon){
+  console.log(pokemon);
+}
+
 function addListItem(pokemon){
   let pokemonList = document.querySelector('.pokemon-list');
   let pokemonListItem = document.createElement('li');
@@ -60,6 +64,7 @@ return {
   add: add,
   getAll: getAll,
   addListItem: addListItem,
+  showDetails: showDetails,
   };
 })();
 
