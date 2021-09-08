@@ -98,7 +98,7 @@ function showModal(title, text) {
     }
   });
 
-  modalContainer.addEventlistener('click', (e) => {
+  modalContainer.addEventListener('click', (e) => {
     let target = e.target;
     if(target === modalContainer) {
       hideModal();
@@ -124,7 +124,7 @@ document.querySelector('#show-modal').addEventListener('click', () => {
 });
 
 function hideModal() {
-  let modalContainer = document.queryselector('#modal-container');
+  let modalContainer = document.querySelector('#modal-container');
   modalContainer.classList.remove('is-visible');
 }
 
