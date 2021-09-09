@@ -2,7 +2,6 @@
 let pokemonRepository = (function() {
   let pokemonList = [];
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
-  let modalContainer = document.querySelector('#modal-container');
 
 // Adds the Pokémon and checks if the Pokémon is an object
 function add(pokemon) {
@@ -23,14 +22,23 @@ function getAll() {
 }
 
 function addListItem(pokemon){
+  //selects pokemon list
   let pokemonList = document.querySelector('.pokemon-list');
+
+  //creates list item
   let pokemonListItem = document.createElement('li');
+
+  //creates button
   let button = document.createElement('button');
+  //puts names on closeButtonElement
   button.innerText = pokemon.name;
+  //creates new class
   button.classList.add('button-class');
-  // adds the button on the list
+
+  //adds
   pokemonListItem.appendChild(button);
   pokemonList.appendChild(pokemonListItem);
+  //adds click event to the button class
   button.addEventListener('click', function(event) {
     showDetails(pokemon);
   });
@@ -60,7 +68,7 @@ function loadDetails(item) {
   return fetch(url).then(function (response) {
     return response.json();
   }).then(function (details) {
-    // Now we add the details to the item
+    //adds details to the item
     item.imageUrl = details.sprites.front_default;
     item.height = details.height;
     item.types = details.types;
@@ -69,28 +77,32 @@ function loadDetails(item) {
   });
 }
 
-// shows modal wit Pokemon name, height and an image of the Pokemon
+// shows information with Pokemon name, height and an image of the Pokemon
 function showDetails(pokemon) {
- pokemonRepository.loadDetails(item).then(function () {
-    console.log(item);
+ loadDetails(pokemon).then(function () {
+    showModal(pokemon);
   });
 }
 
-function showModal(title, text) {
-  let modalContainer = document.querySelector('#modal-container');
-  //clears all existing modal content
-  modalContainer.classList.add('.is-visible');
+let modalContainer = document.querySelector('#modal-container');
 
+function showModal(pokemon) {
+  let modalContainer = document.querySelector('#modal-container');
+
+  // Heb ik dit nog nodig? modalContainer.classList.add('.is-visible');
+
+  //clears all existing modal content
   modalContainer.innerHTML = '';
 
+  //Creates model
   let modal = document.createElement('div');
   modal.classList.add('modal');
 
-  // Add the new modal content
+  // Adds the new modal content
   let closeButtonElement = document.createElement('button');
   closeButtonElement.classList.add('modal-close');
-  closeButtonElement.innerText = 'Close';
-  closeButtonElement.addEventListener('click', hideModal)
+  closeButtonElement.innerText = 'X';
+  closeButtonElement.addEventListener('click', hideModal);
 
   window.addEventListener('keydown', (e) => {
     let modalContainer = document.querySelector('#modal-container');
@@ -107,10 +119,11 @@ function showModal(title, text) {
   });
 
   let titleElement = document.createElement('h1');
-  titleElement.innerText = title;
+  titleElement.innerText = pokemon.name;
 
   let contentElement = document.createElement('p');
-  contentElement.innerText = text;
+  contentElement.innerText = pokemon.height;
+  //Not sure what to do here to show the specifications
 
   modal.appendChild(closeButtonElement);
   modal.appendChild(titleElement);
