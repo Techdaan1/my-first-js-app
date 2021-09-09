@@ -22,7 +22,6 @@ function getAll() {
     return pokemonList;
 }
 
-//
 function addListItem(pokemon){
   let pokemonList = document.querySelector('.pokemon-list');
   let pokemonListItem = document.createElement('li');
@@ -80,6 +79,8 @@ function showDetails(pokemon) {
 function showModal(title, text) {
   let modalContainer = document.querySelector('#modal-container');
   //clears all existing modal content
+  modalContainer.classList.add('.is-visible');
+
   modalContainer.innerHTML = '';
 
   let modal = document.createElement('div');
