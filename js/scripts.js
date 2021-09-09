@@ -104,43 +104,42 @@ function showModal(pokemon) {
   closeButtonElement.innerText = 'X';
   closeButtonElement.addEventListener('click', hideModal);
 
-  window.addEventListener('keydown', (e) => {
-    let modalContainer = document.querySelector('#modal-container');
-    if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
-      hideModal();
-    }
-  });
-
-  modalContainer.addEventListener('click', (e) => {
-    let target = e.target;
-    if(target === modalContainer) {
-      hideModal();
-    }
-  });
-
   let titleElement = document.createElement('h1');
   titleElement.innerText = pokemon.name;
 
   let contentElement = document.createElement('p');
   contentElement.innerText = pokemon.height;
-  //Not sure what to do here to show the specifications
 
   modal.appendChild(closeButtonElement);
   modal.appendChild(titleElement);
   modal.appendChild(contentElement);
   modalContainer.appendChild(modal);
 
+  //shows modal
   modalContainer.classList.add('is-visible');
 }
 
-document.querySelector('#show-modal').addEventListener('click', () => {
-  showModal('Pokémon name', 'Information about the Pokémon!');
-});
-
+//hides modal
 function hideModal() {
   let modalContainer = document.querySelector('#modal-container');
   modalContainer.classList.remove('is-visible');
 }
+
+//hides model when Escape is pressed
+window.addEventListener('keydown', (e) => {
+  let modalContainer = document.querySelector('#modal-container');
+  if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
+    hideModal();
+  }
+});
+
+//hides model when modal container is clicked
+modalContainer.addEventListener('click', (e) => {
+  let target = e.target;
+  if(target === modalContainer) {
+    hideModal();
+  }
+});
 
 return {
   add: add,
