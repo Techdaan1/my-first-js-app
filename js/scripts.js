@@ -114,8 +114,7 @@ function showModal(item) {
   let heightElement = $("<p>" + "Height : " + item.height + "</p>");
   let weightElement = $("<p>" + "Weight : " + item.weight + "</p>");
   let typesElement = $("<p>" + "Types : " + item.types.join(", ") + "</p>");
-  let abilitiesElement = $(
-    "<p>" + "Abilities : " + item.abilities.join(", ") + "</p>");
+  let abilitiesElement = $("<p>" + "Abilities : " + item.abilities.join(", ") + "</p>");
 
   modalTitle.append(nameElement);
   modalBody.append(imageElementFront);
