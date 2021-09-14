@@ -23,7 +23,7 @@ function getAll() {
 
 function addListItem(pokemon){
   //selects pokemon list
-  let pokemonList = document.querySelector('pokemon-list');
+  let pokemonList = document.querySelector('.pokemon-list');
 
   //creates list item
   let pokemonListItem = document.createElement('li');
@@ -82,7 +82,7 @@ function loadDetails(item) {
 
 // shows information with Pokemon name, height and an image of the Pokemon
 function showDetails(item) {
- loadDetails(item).then(function () {
+ pokemonRepository.loadDetails(item).then(function () {
     showModal(item);
   });
 }
