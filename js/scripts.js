@@ -23,7 +23,7 @@ function getAll() {
 
 function addListItem(pokemon){
   //selects pokemon list
-  let pokemonList = document.querySelector('.pokemon-list');
+  let pokemonList = document.querySelector('pokemon-list');
 
   //creates list item
   let pokemonListItem = document.createElement('li');
@@ -81,9 +81,9 @@ function loadDetails(item) {
 }
 
 // shows information with Pokemon name, height and an image of the Pokemon
-function showDetails(pokemon) {
- loadDetails(pokemon).then(function () {
-    showModal(pokemon);
+function showDetails(item) {
+ loadDetails(item).then(function () {
+    showModal(item);
   });
 }
 
@@ -106,8 +106,7 @@ function showModal(item) {
   let weightElement = $("<p>" + "Weight : " + item.weight + "</p>");
   let typesElement = $("<p>" + "Types : " + item.types.join(", ") + "</p>");
   let abilitiesElement = $(
-    "<p>" + "Abilities : " + item.abilities.join(", ") + "</p>"
-  );
+    "<p>" + "Abilities : " + item.abilities.join(", ") + "</p>");
 
   modalTitle.append(nameElement);
   modalBody.append(imageElementFront);
