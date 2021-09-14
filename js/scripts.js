@@ -75,9 +75,18 @@ function loadDetails(item) {
     item.height = details.height;
     item.weight = details.weight;
     item.types = details.types;
-  }).catch(function (e) {
-    console.error(e);
-  });
+    item.types = [];
+        for (let i = 0; i < details.types.length; i++) {
+          item.types.push(details.types[i].type.name);
+        }
+        item.abilities = [];
+        for (let i = 0; i < details.abilities.length; i++) {
+          item.abilities.push(details.abilities[i].ability.name);
+        }
+      })
+      .catch(function (e) {
+        console.error(e);
+      });
 }
 
 // shows information with Pokemon name, height and an image of the Pokemon
