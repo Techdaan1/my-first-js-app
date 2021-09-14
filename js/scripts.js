@@ -128,13 +128,10 @@ function showModal(item) {
 }
 
 return {
-  add: add,
   getAll: getAll,
   addListItem: addListItem,
   loadList: loadList,
   loadDetails: loadDetails,
-  showDetails: showDetails,
-  showModal:showModal,
   };
 })();
 
