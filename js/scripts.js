@@ -36,6 +36,9 @@ function addListItem(pokemon){
   //creates new class
   button.classList.add('button-class', 'btn', 'btn-primary');
 
+  button.setAttribute("data-target", "#pokemonModal");
+  button.setAttribute("data-toggle", "modal");
+
   //adds
   pokemonListItem.appendChild(button);
   pokemonList.appendChild(pokemonListItem);
