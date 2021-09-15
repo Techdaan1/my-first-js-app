@@ -14,14 +14,17 @@ body {
 
 .button-class {
   background-color: #e6fcfa;
-  border: none;
   color: #17401f;
+  border: 2px solid black;
   padding: 16px 32px;
   font-size: 14px;
-  margin: 4px 2px;
+  margin: 4px 1px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
+  text-transform: capitalize;
+  border-radius: 300px;
+  width: 140px;
 }
 
 .button-class:hover {
