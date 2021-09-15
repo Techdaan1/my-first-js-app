@@ -17,14 +17,14 @@ body {
   color: #17401f;
   border: 2px solid black;
   padding: 16px 32px;
-  font-size: 14px;
-  margin: 4px 1px;
+  font-size: 18px;
+  margin: 7px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   text-transform: capitalize;
   border-radius: 300px;
-  width: 140px;
+  width: 200px;
 }
 
 .button-class:hover {
@@ -33,11 +33,18 @@ body {
   opacity: 0.8;
 }
 
-img {
-  display: block;
+.pokemon-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+}
+
+.pokemon-logo {
   margin-left: auto;
   margin-right: auto;
   width: 20%;
+  display: block;
 }
 
 .modal {
