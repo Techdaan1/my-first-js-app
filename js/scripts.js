@@ -101,13 +101,14 @@ function showDetails(item) {
 }
 
 let modalContainer = document.querySelector('#modal-container');
-$("#pokemonModal").addClass("show");
-$("#pokemonModal").show();
 
 function showModal(item) {
   let modalBody = $(".modal-body");
   let modalTitle = $(".modal-title");
   let modalHeader = $(".modal-header");
+  
+  $("#pokemonModal").addClass("show");
+  $("#pokemonModal").show();
 
   modalTitle.empty();
   modalBody.empty();
