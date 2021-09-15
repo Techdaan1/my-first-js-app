@@ -45,6 +45,7 @@ body {
   margin-right: auto;
   display: block;
   width: 20%;
+  height: auto;
 }
 
 .modal {
@@ -85,4 +86,10 @@ margin-bottom: 0;
     margin: 0 auto;
     width: 1000px;
     text-align: center;
+}
+
+header {
+      margin: 0 auto;
+      width: 1000px;
+      text-align: center;
 }
