@@ -43,9 +43,8 @@ body {
 .pokemon-logo {
   margin-left: auto;
   margin-right: auto;
-  width: 20%;
   display: block;
-  
+  width: 20%;
 }
 
 .modal {
