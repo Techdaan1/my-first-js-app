@@ -62,3 +62,9 @@ margin-top: 0;
 font-size: 14px;
 margin-bottom: 0;
 }
+
+.container {
+    margin: 0 auto;
+    width: 1000px;
+    text-align: center;
+}
