@@ -1,18 +1,20 @@
 //List of different Pokémon and their specifications, wrapped in an IIFE
 let pokemonRepository = (function() {
   let pokemonList = [];
-  let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150";
+  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
   // Adds the Pokémon and checks if the Pokémon is an object
   function add(pokemon) {
     if (
-      typeof pokemon === "object" &&
-      "name" in pokemon &&
-      "detailsUrl" in pokemon
+      typeof pokemon === 'object' &&
+      'name' in pokemon &&
+      'detailsUrl' in pokemon
     ) {
       pokemonList.push(pokemon);
     } else {
-      console.log("pokemon is not correct");
+      /* eslint-disable no-console */
+      console.log('pokemon is not correct');
+      /* eslint-disable no-console */
     }
   }
 
@@ -23,28 +25,28 @@ let pokemonRepository = (function() {
 
   function addListItem(pokemon) {
     //selects pokemon list
-    let pokemonList = document.querySelector(".pokemon-list");
+    let pokemonList = document.querySelector('.pokemon-list');
 
     //creates list item
-    let pokemonListItem = document.createElement("li");
-    pokemonListItem.classList.add("group-list-item");
+    let pokemonListItem = document.createElement('li');
+    pokemonListItem.classList.add('group-list-item');
 
     //creates button
-    let button = document.createElement("button");
+    let button = document.createElement('button');
     //puts names on closeButtonElement
     button.innerText = pokemon.name;
     //creates new class
-    button.classList.add("button-class", "btn", "btn-primary");
+    button.classList.add('button-class', 'btn', 'btn-primary');
 
     //closes modal
-    button.setAttribute("data-target", "#pokemonModal");
-    button.setAttribute("data-toggle", "modal");
+    button.setAttribute('data-target', '#pokemonModal');
+    button.setAttribute('data-toggle', 'modal');
 
     //adds button
     pokemonListItem.appendChild(button);
     pokemonList.appendChild(pokemonListItem);
     //adds click event to the button class
-    button.addEventListener("click", function() {
+    button.addEventListener('click', function() {
       showDetails(pokemon);
     });
   }
@@ -107,26 +109,26 @@ let pokemonRepository = (function() {
 
   // shows modal
   function showModal(item) {
-    let modalBody = $(".modal-body");
-    let modalTitle = $(".modal-title");
-    let modalHeader = $(".modal-header");
+    let modalBody = $('.modal-body');
+    let modalTitle = $('.modal-title');
+    let modalHeader = $('.modal-header');
 
     modalTitle.empty();
     modalBody.empty();
 
-    $("#pokemonModal").addClass("show");
-    $("#pokemonModal").show();
+    $('#pokemonModal').addClass('show');
+    $('#pokemonModal').show();
 
-    let nameElement = $("<h1>" + item.name + "</h1>");
+    let nameElement = $('<h1>' + item.name + '</h1>');
     let imageElementFront = $('<img class="modal-img" style="width:30%">');
-    imageElementFront.attr("src", item.imageUrlFront);
+    imageElementFront.attr('src', item.imageUrlFront);
     let imageElementBack = $('<img class="modal-img" style="width:30%">');
-    imageElementBack.attr("src", item.imageUrlBack);
-    let heightElement = $("<p>" + "Height : " + item.height + "</p>");
-    let weightElement = $("<p>" + "Weight : " + item.weight + "</p>");
-    let typesElement = $("<p>" + "Types : " + item.types.join(", ") + "</p>");
+    imageElementBack.attr('src', item.imageUrlBack);
+    let heightElement = $('<p>' + 'Height : ' + item.height + '</p>');
+    let weightElement = $('<p>' + 'Weight : ' + item.weight + '</p>');
+    let typesElement = $('<p>' + 'Types : ' + item.types.join(', ') + '</p>');
     let abilitiesElement = $(
-      "<p>" + "Abilities : " + item.abilities.join(", ") + "</p>"
+      '<p>' + 'Abilities : ' + item.abilities.join(', ') + '</p>'
     );
 
     modalTitle.append(nameElement);
