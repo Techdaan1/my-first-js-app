@@ -6,7 +6,7 @@
 html,
 body {
   background-color: var(--bg-color);
-  font-family: "georgia", serif;
+  font-family: 'georgia', serif;
   color: var(--dark-blue);
   font-size: 16px;
   text-decoration: none;
@@ -59,6 +59,11 @@ button {
   text-align: left;
   box-sizing: border-box;
   padding: 15px;
+}
+
+.modal-body,
+.modal-header {
+  background-color: #ffffe0;
 }
 
 .container {
