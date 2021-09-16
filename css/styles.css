@@ -1,15 +1,19 @@
 :root {
-  --bg-color: #D4EFDF;
+  --bg-color: #d4efdf;
   --dark-blue: #191970;
 }
 
 html,
 body {
   background-color: var(--bg-color);
-  font-family: 'georgia', serif;
+  font-family: "georgia", serif;
   color: var(--dark-blue);
   font-size: 16px;
   text-decoration: none;
+}
+
+button {
+  text-decoration: underline;
 }
 
 .button-class {
@@ -43,7 +47,6 @@ body {
 .pokemon-logo {
   margin-left: auto;
   margin-right: auto;
-  display: block;
   width: 20%;
   height: auto;
 }
@@ -60,36 +63,24 @@ body {
   display: none;
 }
 
-.modal-close {
-float: right;
--webkit-appearance: none;
-border: 0;
-background: none;
-color: #777;
-}
-
-.modal-close:hover {
-text-decoration: underline;
-}
-
 .modal h1 {
-font-size: 16px;
-margin-top: 0;
+  font-size: 16px;
+  margin-top: 0;
 }
 
 .modal p {
-font-size: 14px;
-margin-bottom: 0;
+  font-size: 14px;
+  margin-bottom: 0;
 }
 
 .container {
-    margin: 0 auto;
-    width: 1000px;
-    text-align: center;
+  margin: 0 auto;
+  width: 1000px;
+  text-align: center;
 }
 
 header {
-      margin: 0 auto;
-      width: 1000px;
-      text-align: center;
+  margin: 0 auto;
+  width: 1000px;
+  text-align: center;
 }
