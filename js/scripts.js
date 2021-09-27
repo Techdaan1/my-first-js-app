@@ -139,6 +139,22 @@ let pokemonRepository = (function() {
     modalBody.append(abilitiesElement);
   }
 
+  $(document).ready(function() {
+    $('#search-input').on('keyup', function() {
+      let value = $(this)
+        .val()
+        .toLowerCase();
+      $('.list-group *').filter(function() {
+        $(this).toggle(
+          $(this)
+            .text()
+            .toLowerCase()
+            .indexOf(value) > -1
+        );
+      });
+    });
+  });
+
   return {
     getAll: getAll,
     addListItem: addListItem,
