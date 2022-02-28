@@ -9,8 +9,6 @@ There is no CSS used in the finished version of the app, to push myself to use t
 Though I am ok with the final layout I, from now on, vow to never use bootstrap again, unless I am urged to do so with force.
 This was the first achievement of the CareerFoundry Full-Stack Course.
 
-## Features and Requirements
-
 ## User Goals
 Users should be able to view a list of 151 pokemon and see more details for a given pokemon on demand.
 
